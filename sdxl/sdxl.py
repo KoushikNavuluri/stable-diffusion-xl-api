@@ -4,8 +4,8 @@ import json
 
 class ImageGenerator:
 
-    def __init__(self, cookie):
-        self.cookie = cookie
+    def __init__(self):
+        pass
 
     def gen_image(self, prompt, count=1, width=1024, height=1024, refine="expert_ensemble_refiner", scheduler="DDIM", guidance_scale=7.5, high_noise_frac=0.8, prompt_strength=0.8, num_inference_steps=50):
         try:
@@ -64,7 +64,6 @@ class ImageGenerator:
                 'Origin': 'https://replicate.com',
                 'DNT': '1',
                 'Connection': 'keep-alive',
-                'Cookie': self.cookie,
                 'Sec-Fetch-Dest': 'empty',
                 'Sec-Fetch-Mode': 'cors',
                 'Sec-Fetch-Site': 'same-origin',
@@ -109,7 +108,6 @@ class ImageGenerator:
             'Referer': 'https://replicate.com/stability-ai/sdxl',
             'DNT': '1',
             'Connection': 'keep-alive',
-            'Cookie': self.cookie,
             'Sec-Fetch-Dest': 'empty',
             'Sec-Fetch-Mode': 'cors',
             'Sec-Fetch-Site': 'same-origin',
