@@ -5,7 +5,21 @@ import json
 class ImageGenerator:
 
     def __init__(self):
-        pass
+        self.headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0',
+                'Accept': 'application/json',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Referer': 'https://replicate.com/stability-ai/sdxl',
+                'Content-Type': 'application/json',
+                'Origin': 'https://replicate.com',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Sec-Fetch-Dest': 'empty',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Site': 'same-origin',
+                'TE': 'trailers'
+            }
+        
 
     def gen_image(self, prompt, count=1, width=1024, height=1024, refine="expert_ensemble_refiner", scheduler="DDIM", guidance_scale=7.5, high_noise_frac=0.8, prompt_strength=0.8, num_inference_steps=50):
         try:
@@ -55,28 +69,13 @@ class ImageGenerator:
                 }
             })
 
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0',
-                'Accept': 'application/json',
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Referer': 'https://replicate.com/stability-ai/sdxl',
-                'Content-Type': 'application/json',
-                'Origin': 'https://replicate.com',
-                'DNT': '1',
-                'Connection': 'keep-alive',
-                'Sec-Fetch-Dest': 'empty',
-                'Sec-Fetch-Mode': 'cors',
-                'Sec-Fetch-Site': 'same-origin',
-                'TE': 'trailers'
-            }
-
-            response = requests.request("POST", url, headers=headers, data=payload)
+            response = requests.request("POST", url, headers=self.headers, data=payload)
 
             response.raise_for_status()
 
             json_response = response.json()
             uuid = json_response['uuid']
-            image_url = self.get_image_url(uuid)
+            image_url = self.get_image_url(uuid,prompt)
 
             return image_url
 
@@ -96,27 +95,15 @@ class ImageGenerator:
             print(f"An unexpected error occurred: {e}")
             return None
 
-    def get_image_url(self, uuid):
+    def get_image_url(self, uuid,prompt):
         url = f"https://replicate.com/api/models/stability-ai/sdxl/versions/2b017d9b67edd2ee1401238df49d75da53c523f36e363881e057f5dc3ed3c5b2/predictions/{uuid}"
 
         payload = {}
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0',
-            'Accept': '*/*',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Referer': 'https://replicate.com/stability-ai/sdxl',
-            'DNT': '1',
-            'Connection': 'keep-alive',
-            'Sec-Fetch-Dest': 'empty',
-            'Sec-Fetch-Mode': 'cors',
-            'Sec-Fetch-Site': 'same-origin',
-            'TE': 'trailers'
-        }
 
-        response = requests.request("GET", url, headers=headers, data=payload).json()
+        response = requests.request("GET", url, headers=self.headers, data=payload).json()
 
         if response['prediction']['status'] == "succeeded":
-            output_url = response['prediction']['output_files']
-            return output_url
+            output = {"prompt":prompt,"images":response['prediction']['output_files']}
+            return output
         else:
-            return self.get_image_url(uuid)
+            return self.get_image_url(uuid,prompt)
