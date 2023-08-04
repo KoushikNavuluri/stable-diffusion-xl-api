@@ -2,7 +2,7 @@
 
    Reverse engineered API of Stable Diffusion XL 1.0 ( Midjourney Alternative ) via https://replicate.com/ , A text-to-image generative AI model that creates beautiful 1024x1024 images.
 
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/d1022d40-05f0-4d2d-a37e-8cab7d444bec" width="900" >   
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/50a81ef7-4f4e-4b46-a881-a55726b8e211" width="900" >   
 
 # Table of Contents
 
@@ -64,15 +64,19 @@ print(images)
 ### Output
 <img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/5f362c03-d8f1-462c-873a-40e47bdaea63" width="600" >
 
+
 ## Example Images Generated
 
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/eb1976ac-0cf7-4817-9116-bd7384282380" width="200" >
 
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/9bcfa7de-338e-48ca-a008-a068236d052c" width="200">
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/7588d73e-d224-44b9-9e65-efb05c63cb6f" width="200" >
 
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/a7ad3bc8-431a-40d3-a43f-aec9426b8f18" width="200" >
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/99813d96-9174-4d70-be3e-b8f638299429" width="200">
 
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/1fd90d12-aaba-4fce-bf94-2077355a5d41" width="200">
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/8cd02b68-a9d4-4b43-a824-c980c115dae8" width="200" >
+
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/14039a28-3605-41c7-8a97-33f7982a3f13" width="200">
+
+
 
 
 
