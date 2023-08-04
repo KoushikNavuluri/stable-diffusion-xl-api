@@ -6,7 +6,7 @@
 
 # Table of Contents
 
-> [Stable Diffusion XL ( API )](#stable-diffusion-xl---api--)
+- [Stable Diffusion XL ( API )](#stable-diffusion-xl---api--)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -15,6 +15,7 @@
   * [Example Images Generated](#example-images-generated)
   * [Advanced Generation using parameters](#advanced-generation-using-parameters)
     + [List of parameters](#list-of-parameters)
+  * [CLI Version](#cli-version)
   * [Disclaimer](#disclaimer)
   * [License](#license)
 
@@ -95,6 +96,17 @@ print(images)
       *   prompt_strength = Prompt strength in image (maximum: 1) 
       *   num_inference_steps = Number of denoising steps (minimum: 1; maximum: 500) 
       *   high_noise_frac = for expert_ensemble_refiner, the fraction of noise to use (maximum: 1)
+      
+## CLI Version
+
+For cli version you can check example folder in this repository (filename:cli.py)
+
+> How to:
+
+```bash
+python main.py "beautiful landscape with two kittens,realistic,4k" --count 1 --width 1024 --height 1024 --refine expert_ensemble_refiner --scheduler DDIM --guidance_scale 7.5 --high_noise_frac 0.6 --prompt_strength 0.9 --num_inference_steps 40
+
+```
 
 ## Disclaimer
 
