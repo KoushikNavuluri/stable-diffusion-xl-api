@@ -6,7 +6,7 @@ long_description = (base_path / "README.md").read_text()
 
 setup(
     name='sdxl', 
-    version='1.0.13',  
+    version='1.0.0',  
     author='Koushik',
     license="MIT",
     author_email='koushikk@outlook.com',
