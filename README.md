@@ -62,7 +62,9 @@ print(images)
 ```
 
 ### Output
-<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/5f362c03-d8f1-462c-873a-40e47bdaea63" width="600" >
+
+
+<img src="https://github.com/KoushikNavuluri/stable-diffusion-xl-api/assets/103725723/045c629e-5d0b-4ad0-bfaf-4abff7f2f7be" width="600" >
 
 
 ## Example Images Generated
