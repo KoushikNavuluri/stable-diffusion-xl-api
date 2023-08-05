@@ -56,7 +56,7 @@ client = ImageGenerator()
 ```
 ## Send Prompt to generate image
 ```bash
-images = sdxl.gen_image(
+images = client.gen_image(
     "Vibrant, Headshot of a serene, meditating individual surrounded by soft, ambient lighting.")
 print(images)
 ```
